@@ -1,0 +1,17 @@
+name: Smart Campus - Local
+values:
+  - key: baseUrl
+    enabled: true
+    value: 'http://localhost:8080/api/v1'
+  - key: roomId
+    enabled: true
+    value: LIB-301
+  - key: sensorId
+    enabled: true
+    value: ''
+  - key: maintenanceSensorId
+    enabled: true
+    value: MAINT-001
+  - key: readingId
+    enabled: true
+    value: ''

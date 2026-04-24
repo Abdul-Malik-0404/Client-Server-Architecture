@@ -1,0 +1,18 @@
+$kind: http-request
+name: Error Forbidden
+url: "{{baseUrl}}/sensors/S1/readings"
+method: POST
+body:
+  type: json
+  content: |-
+    {
+        "value": 30.0
+    }
+scripts:
+  - type: afterResponse
+    code: |-
+      pm.test("Status is 403", function() {
+          pm.response.to.have.status(403);
+      });
+    language: text/javascript
+order: 4362823607872818

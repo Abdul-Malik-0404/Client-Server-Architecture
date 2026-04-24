@@ -1,0 +1,20 @@
+$kind: http-request
+name: Error Invalid Room
+url: "{{baseUrl}}/sensors"
+method: POST
+body:
+  type: json
+  content: |-
+    {
+        "id": "S2",
+        "type": "CO2",
+        "roomId": "NON-EXISTENT"
+    }
+scripts:
+  - type: afterResponse
+    code: |-
+      pm.test("Status is 422", function() {
+          pm.response.to.have.status(422);
+      });
+    language: text/javascript
+order: 514602157833854

@@ -10,7 +10,7 @@ import java.util.logging.Logger;
 
 public class Main {
     // Base URI the Grizzly HTTP server will listen on
-    public static final String BASE_URI = "http://localhost:8080/";
+    public static final String BASE_URI = "http://localhost:8080/api/v1/";
 
     public static HttpServer startServer() {
         // Build the JAX-RS ResourceConfig by scanning for resources and providers
@@ -26,7 +26,7 @@ public class Main {
         try {
             final HttpServer server = startServer();
             System.out.println(String.format("Jersey app started with endpoints available at "
-                    + "%sapi/v1\nHit Ctrl-C to stop it...", BASE_URI));
+                    + "%s\nHit Ctrl-C to stop it...", BASE_URI));
             
             // Keep server running until process is terminated
             Thread.currentThread().join();

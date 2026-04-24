@@ -1,0 +1,14 @@
+$kind: http-request
+name: Filter Sensors
+url: "{{baseUrl}}/sensors?type=Temperature"
+method: GET
+queryParams:
+  type: Temperature
+scripts:
+  - type: afterResponse
+    code: |-
+      pm.test("Status is 200", function() {
+          pm.response.to.have.status(200);
+      });
+    language: text/javascript
+order: 4285004926995417

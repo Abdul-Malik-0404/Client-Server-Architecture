@@ -1,0 +1,15 @@
+$kind: http-request
+name: Discovery
+url: "{{baseUrl}}"
+method: GET
+body:
+  type: json
+  content: ""
+scripts:
+  - type: afterResponse
+    code: |-
+      pm.test("Status is 200", function () {
+          pm.response.to.have.status(200);
+      });
+    language: text/javascript
+order: 190648530530

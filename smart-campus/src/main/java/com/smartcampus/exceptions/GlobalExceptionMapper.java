@@ -13,6 +13,10 @@ public class GlobalExceptionMapper implements ExceptionMapper<Throwable> {
 
     @Override
     public Response toResponse(Throwable exception) {
+        if (exception instanceof javax.ws.rs.WebApplicationException) {
+            return ((javax.ws.rs.WebApplicationException) exception).getResponse();
+        }
+        
         LOGGER.log(Level.SEVERE, "Unexpected server error", exception);
         return Response.status(Response.Status.INTERNAL_SERVER_ERROR) // 500
                 .entity(Collections.singletonMap("error", "An unexpected internal server error occurred."))

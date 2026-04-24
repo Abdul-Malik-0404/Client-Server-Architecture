@@ -1,0 +1,13 @@
+$kind: http-request
+name: Temp Room
+url: "{{baseUrl}}/rooms"
+method: POST
+body:
+  type: json
+  content: |-
+    {
+        "id": "DELETE-ME",
+        "name": "Temporary Room",
+        "capacity": 10
+    }
+order: 4503580365725273

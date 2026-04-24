@@ -1,0 +1,14 @@
+$kind: http-request
+name: Set Sensor to Maintenace
+url: "{{baseUrl}}/sensors"
+method: POST
+body:
+  type: json
+  content: |-
+    {
+        "id": "S1",
+        "type": "Temperature",
+        "roomId": "LAB-1",
+        "status": "MAINTENANCE"
+    }
+order: 4322981086106971
